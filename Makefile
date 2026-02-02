@@ -3,7 +3,7 @@ INSTALL_DIR=/usr/local/bin
 CUSTOM_BINARY_FOLDER=ko
 
 build:
-	go build -o $(BINARY_NAME)
+	go build -o $(BINARY_NAME) ./cli
 
 install: build
 	cp $(BINARY_NAME) $(INSTALL_DIR)/$(CUSTOM_BINARY_FOLDER)/$(BINARY_NAME)
