@@ -3,9 +3,9 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN CGO_ENABLED=0 go build -o server ./server && chmod +x server
+RUN CGO_ENABLED=0 go build -o /bin/server ./server
 
 FROM alpine:latest
-COPY --from=build --chmod=755 /app/server /server
+COPY --from=build /bin/server /bin/server
 EXPOSE 8080
-CMD ["/server"]
+CMD ["/bin/server"]
