@@ -3,7 +3,7 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN CGO_ENABLED=0 go build -o server ./server
+RUN CGO_ENABLED=0 go build -o server ./server && chmod +x server
 
 FROM gcr.io/distroless/static
 COPY --from=build /app/server /server
