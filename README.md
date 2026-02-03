@@ -2,6 +2,12 @@
 
 **kevin's swiss army knife** — A collection of command-line utilities built with Go.
 
+Fly related commands:
+
+- fly machine list 
+- fly machine destroy <machine_id> --force
+- fly deploy
+
 ## Overview
 
 `ko` is me, I am `ko`. These are my commands.
