@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"ko-commands/logic"
 	"net/http"
 )
@@ -13,6 +14,6 @@ func VanguardLoginQR(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "image/png")
-	w.Header().Set("Content-Length", string(rune(len(screenshot))))
+	w.Header().Set("Content-Length", fmt.Sprintf("%d", len(screenshot)))
 	w.Write(screenshot)
 }
