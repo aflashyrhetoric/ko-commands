@@ -7,4 +7,5 @@ import (
 
 func Register(r *router.Router) {
 	r.Get("/recycling", controllers.Recycling)
+	r.Get("/vanguard-login-qr", controllers.VanguardLoginQR)
 }
