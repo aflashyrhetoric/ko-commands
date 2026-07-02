@@ -1,4 +1,4 @@
-.PHONY: server
+.PHONY: server deploy
 
 BINARY_NAME=ko
 INSTALL_DIR=/usr/local/bin
@@ -17,3 +17,6 @@ clean:
 
 server:
 	go run ./server
+
+deploy:
+	fly deploy

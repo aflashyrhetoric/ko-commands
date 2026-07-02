@@ -8,5 +8,5 @@ import (
 func main() {
 	r := router.New()
 	routes.Register(r)
-	r.Serve(":8080")
+	r.Serve(":5050")
 }

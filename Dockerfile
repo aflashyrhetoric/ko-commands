@@ -6,6 +6,7 @@ COPY . .
 RUN CGO_ENABLED=0 go build -o /bin/server ./server
 
 FROM alpine:latest
+RUN apk add --no-cache chromium
 COPY --from=build /bin/server /bin/server
 EXPOSE 8080
 CMD ["/bin/server"]
